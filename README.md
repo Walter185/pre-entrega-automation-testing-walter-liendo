@@ -2,13 +2,23 @@
 
 ## Descripción
 
-Proyecto de pre-entrega de Automatización QA realizado con Python, Selenium WebDriver y Pytest.
+Proyecto de pre-entrega del curso de Automatización QA.
 
-El objetivo es automatizar pruebas funcionales sobre SauceDemo, validando el flujo de login, la navegación por el catálogo de productos y la interacción con el carrito de compras.
+El objetivo es automatizar pruebas funcionales sobre el sitio SauceDemo utilizando Python, Selenium WebDriver y Pytest.
+
+Se validan los siguientes flujos:
+
+- Inicio de sesión con credenciales válidas.
+- Visualización del catálogo de productos.
+- Validación de elementos principales de la interfaz.
+- Obtención del nombre y precio del primer producto.
+- Agregado de un producto al carrito.
+- Validación del contador del carrito.
+- Verificación del producto dentro del carrito.
 
 ## Tecnologías utilizadas
 
-- Python
+- Python 3
 - Selenium WebDriver
 - Pytest
 - WebDriver Manager
@@ -20,13 +30,122 @@ El objetivo es automatizar pruebas funcionales sobre SauceDemo, validando el flu
 
 https://www.saucedemo.com/
 
-## Estado del proyecto
+## Credenciales de prueba
 
-En desarrollo.
+Usuario:
 
-Actualmente se encuentra implementado:
+```text
+standard_user
+```
 
-- Configuración de Chrome mediante WebDriver Manager
-- Fixture de Pytest para iniciar y cerrar el navegador
-- Función auxiliar reutilizable para login
-- Test de login exitoso
+Contraseña:
+
+```text
+secret_sauce
+```
+
+## Estructura del proyecto
+
+```text
+pre-entrega-automation-testing-walter-liendo/
+│
+├── tests/
+│   └── test_saucedemo.py
+│
+├── utils/
+│   └── helpers.py
+│
+├── reports/
+│   └── reporte.html
+│
+├── conftest.py
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
+
+## Instalación
+
+Clonar el repositorio:
+
+```bash
+git clone https://github.com/Walter185/pre-entrega-automation-testing-walter-liendo.git
+```
+
+Ingresar a la carpeta del proyecto:
+
+```bash
+cd pre-entrega-automation-testing-walter-liendo
+```
+
+Instalar las dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Ejecución de los tests
+
+Para ejecutar todos los tests:
+
+```bash
+python -m pytest -v
+```
+
+## Generación del reporte HTML
+
+Para ejecutar las pruebas y generar el reporte:
+
+```bash
+python -m pytest -v --html=reports/reporte.html
+```
+
+El reporte generado se guarda en:
+
+```text
+reports/reporte.html
+```
+
+## Pruebas implementadas
+
+### Login
+
+Se valida:
+
+- Ingreso con usuario y contraseña válidos.
+- Redirección a `/inventory.html`.
+- Visualización del título `Products`.
+
+### Catálogo
+
+Se valida:
+
+- Visualización del título del catálogo.
+- Existencia de productos.
+- Nombre del primer producto.
+- Precio del primer producto.
+- Menú visible.
+- Filtro de productos visible.
+
+### Carrito
+
+Se valida:
+
+- Agregado del primer producto.
+- Contador del carrito igual a `1`.
+- Navegación al carrito.
+- Presencia del producto agregado.
+
+## Resultado de ejecución
+
+Resultado actual:
+
+```text
+3 passed
+```
+
+Los tres casos de prueba se ejecutan correctamente.
+
+## Autor
+
+Walter Liendo
